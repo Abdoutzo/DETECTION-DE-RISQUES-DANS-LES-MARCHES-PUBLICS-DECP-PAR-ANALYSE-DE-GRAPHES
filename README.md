@@ -3,7 +3,7 @@
 ## Contexte
 Ce depot contient le code et les sorties d'une etude
 de priorisation de risque sur les marches publics DECP.
-Groupe : Abderrazzak OUTZOULA & Badrdine SAADIOUI
+Groupe : Abderrazzak OUTZOULA & Badraddine SAADIOUI
 
 Probleme traite:
 - modeliser les attributions acheteur-fournisseur sous forme de graphe,
