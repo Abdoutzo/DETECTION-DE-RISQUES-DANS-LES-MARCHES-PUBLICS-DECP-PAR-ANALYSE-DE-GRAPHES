@@ -78,8 +78,3 @@ Tableaux:
 - verification descriptive des signaux de risque (concentration, concurrence),
 - centralite structurelle (PageRank sur projection fournisseurs),
 - analyse communautaire avec modularite elevee et lecture de la concentration du risque.
-
-## Politique de versionnement
-Le depot versionne uniquement les elements necessaires a l'evaluation et a la
-reproduction. Les fichiers de cours, annexes PDF, donnees brutes et intermediaires
-ne sont pas inclus.
