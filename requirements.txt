@@ -1,0 +1,7 @@
+﻿requests
+pandas
+networkx
+scikit-learn
+matplotlib
+tqdm
+pyarrow

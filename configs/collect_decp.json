@@ -1,0 +1,15 @@
+﻿{
+  "resource_id": "22847056-61df-452d-837d-8b8ceadbfc52",
+  "base_url": "https://tabular-api.data.gouv.fr/api/resources/{resource_id}/data/",
+  "filters": {
+    "dateNotification__greater": "2024-01-01",
+    "dateNotification__less": "2025-01-01"
+  },
+  "columns": [],
+  "page_size": 200,
+  "max_pages": 500,
+  "sleep_seconds": 0.02,
+  "start_page": 1507,
+  "append": true,
+  "output_csv": "data/raw/decp_2024.csv"
+}

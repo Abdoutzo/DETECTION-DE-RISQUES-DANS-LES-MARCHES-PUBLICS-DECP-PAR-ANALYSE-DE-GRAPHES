@@ -1,0 +1,35 @@
+﻿{
+  "resource_id": "22847056-61df-452d-837d-8b8ceadbfc52",
+  "base_url": "https://tabular-api.data.gouv.fr/api/resources/{resource_id}/data/",
+  "filters": {
+    "dateNotification__greater": "2024-01-01",
+    "dateNotification__less": "2025-01-01",
+    "type__exact": "Travaux"
+  },
+  "columns": [
+    "uid",
+    "id",
+    "nature",
+    "type",
+    "acheteur_id",
+    "acheteur_nom",
+    "titulaire_id",
+    "titulaire_nom",
+    "montant",
+    "dateNotification",
+    "codeCPV",
+    "procedure",
+    "dureeMois",
+    "offresRecues",
+    "acheteur_departement_code",
+    "titulaire_departement_code",
+    "acheteur_region_code",
+    "titulaire_region_code"
+  ],
+  "page_size": 200,
+  "max_pages": null,
+  "sleep_seconds": 0.02,
+  "start_page": 1,
+  "append": false,
+  "output_csv": "data/raw/decp_2024_travaux.csv"
+}

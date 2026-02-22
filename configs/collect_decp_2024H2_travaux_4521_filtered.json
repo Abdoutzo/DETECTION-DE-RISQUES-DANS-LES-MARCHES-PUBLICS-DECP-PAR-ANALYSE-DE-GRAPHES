@@ -1,0 +1,40 @@
+﻿{
+  "resource_id": "22847056-61df-452d-837d-8b8ceadbfc52",
+  "base_url": "https://tabular-api.data.gouv.fr/api/resources/{resource_id}/data/",
+  "filters": {
+    "dateNotification__greater": "2024-07-01",
+    "dateNotification__less": "2025-01-01",
+    "type__exact": "Travaux",
+    "codeCPV__contains": "4521",
+    "offresRecues__greater": 1,
+    "offresRecues__less": 16,
+    "montant__greater": 5000,
+    "montant__less": 20000000,
+    "titulaire_typeIdentifiant__exact": "SIRET"
+  },
+  "columns": [
+    "uid",
+    "id",
+    "type",
+    "codeCPV",
+    "acheteur_id",
+    "acheteur_nom",
+    "titulaire_id",
+    "titulaire_nom",
+    "montant",
+    "dateNotification",
+    "procedure",
+    "dureeMois",
+    "offresRecues",
+    "acheteur_departement_code",
+    "titulaire_departement_code",
+    "acheteur_region_code",
+    "titulaire_region_code"
+  ],
+  "page_size": 200,
+  "max_pages": null,
+  "sleep_seconds": 0.02,
+  "start_page": 1,
+  "append": false,
+  "output_csv": "data/raw/decp_2024H2_travaux_cpv4521_filtered.csv"
+}

@@ -1,0 +1,41 @@
+# Python
+__pycache__/
+*.pyc
+*.pyo
+*.pyd
+.venv/
+.env
+
+# Notebook artifacts
+.ipynb_checkpoints/
+notebooks/
+
+# Course/support material (not part of project deliverable)
+Part*.pdf
+Project_Description.pdf
+page_summaries.md
+reports/iclr_report/Your projects - Overleaf, Online LaTeX Editor.html
+
+# Keep repo focused on reproducible outputs only
+reports/project_report.md
+reports/report_final_draft.md
+reports/figures/step2_bipartite_sample.png
+scripts/update_iclr_figs.py
+scripts/update_iclr_figs_step1.py
+
+# Data policy
+# - exclude raw/interim
+# - include only processed outputs needed by reviewers
+data/raw/
+data/interim/
+data/processed/*
+!data/processed/buyers_high_risk.csv
+!data/processed/case_studies_top20.csv
+!data/processed/community_modularity_metrics.csv
+!data/processed/community_risk_summary.csv
+!data/processed/community_risk_top_large.csv
+!data/processed/edges_features_summary.csv
+!data/processed/risk_score_quantiles.csv
+!data/processed/suppliers_high_risk.csv
+!data/processed/suppliers_pagerank_top10.csv
+!data/processed/top_risk_edges.csv

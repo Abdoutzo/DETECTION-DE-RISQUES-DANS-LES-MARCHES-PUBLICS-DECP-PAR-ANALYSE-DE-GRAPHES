@@ -1,0 +1,2 @@
+projection_nodes,projection_edges,communities_count,largest_community_suppliers,modularity,louvain_runs,seed_start,best_seed,modularity_mean,modularity_std,modularity_min,modularity_max,risk_p95_threshold,global_high_risk_share
+4489,37756,657,231,0.8829735997417242,12,42,51,0.882687683176349,0.00024250133310136366,0.8821034460118884,0.8829735997417242,0.6389164044165669,0.05008195228555819
