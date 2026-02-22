@@ -20,6 +20,7 @@ reports/iclr_report/Your projects - Overleaf, Online LaTeX Editor.html
 reports/project_report.md
 reports/report_final_draft.md
 reports/figures/step2_bipartite_sample.png
+reports/iclr_report/
 scripts/update_iclr_figs.py
 scripts/update_iclr_figs_step1.py
 

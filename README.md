@@ -1,7 +1,7 @@
 # Detection de risques dans les marches publics (DECP) par analyse de graphes
 
 ## Contexte
-Ce depot contient le code, les sorties et les assets du rapport ICLR pour une etude
+Ce depot contient le code et les sorties d'une etude
 de priorisation de risque sur les marches publics DECP.
 
 Probleme traite:
@@ -40,8 +40,7 @@ Le pipeline est decoupe en scripts numerotes:
 ## Structure du depot
 - `configs/` : configurations de collecte API.
 - `scripts/` : pipeline complet de preparation, scoring et visualisation.
-- `reports/iclr_report/` : manuscript LaTeX final (template ICLR 2021).
-- `reports/figures/` : figures finales utilisees dans le rapport.
+- `reports/figures/` : figures finales generees par le pipeline.
 - `data/processed/` : sorties compactes utiles a l'evaluation (CSV de resultats).
 - `requirements.txt` : dependances Python.
 
@@ -60,9 +59,6 @@ python scripts/07_community_modularity.py
 ```
 
 ## Resultats a consulter en priorite
-Rapport:
-- `reports/iclr_report/main.tex`
-
 Figures:
 - `reports/figures/step4_risk_score_dist.png`
 - `reports/figures/step5_offers_low_vs_high.png`
