@@ -30,6 +30,8 @@ scripts/update_iclr_figs_step1.py
 data/raw/
 data/interim/
 data/processed/*
+!data/raw/
+!data/raw/decp_2024H2_travaux_cpv4521_filtered.csv
 !data/processed/buyers_high_risk.csv
 !data/processed/case_studies_top20.csv
 !data/processed/community_modularity_metrics.csv
