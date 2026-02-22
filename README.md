@@ -1,25 +1,51 @@
 # Detection de risques dans les marches publics (DECP) par analyse de graphes
 
-Projet de cours "Graph Analytics and Applications" (Ecole Centrale Casablanca).
+## Contexte
+Ce depot contient le code, les sorties et les assets du rapport ICLR pour une etude
+de priorisation de risque sur les marches publics DECP.
 
-## Objectif
-Construire un score de risque interpretable sur des relations acheteur-fournisseur
-dans les marches publics DECP, puis analyser ces relations par:
-- ranking d'aretes acheteur-fournisseur,
-- indicateurs de centralite,
-- analyse de communautes (Louvain + modularite).
+Probleme traite:
+- modeliser les attributions acheteur-fournisseur sous forme de graphe,
+- construire un score de risque interpretable au niveau relation (arete),
+- produire un classement exploitable pour la priorisation des controles,
+- completer l'analyse par centralite (PageRank) et communautes (Louvain + modularite).
 
-## Contenu du depot (version prof)
-- `scripts/`: pipeline complet (`01` a `07`)
-- `configs/`: configurations de collecte DECP
-- `reports/iclr_report/`: rapport final LaTeX (template ICLR)
-- `reports/figures/`: figures finales (steps 1 a 9)
-- `data/processed/`: sorties finales compactes pour lecture/resultats
-- `requirements.txt`: dependances Python
+## Perimetre des donnees
+Filtrage applique (config principale):
+- periode: 2024-07-01 a 2025-01-01 (H2 2024),
+- type: Travaux,
+- domaine: CPV contenant `4521`,
+- borne montant: 5 000 a 20 000 000,
+- identifiant titulaire: SIRET.
 
-Les fichiers de cours, PDF annexes et donnees brutes/intermediaires ne sont pas commites.
+## Pipeline code (scripts)
+Le pipeline est decoupe en scripts numerotes:
 
-## Reproduction rapide
+1. `scripts/01_collect_decp.py`
+   collecte DECP via API tabulaire (`configs/*.json`).
+2. `scripts/02_build_edges.py`
+   nettoyage minimal + construction du graphe biparti + agregation des aretes.
+3. `scripts/03_compute_features.py`
+   calcul des features de graphe et du score de risque baseline.
+4. `scripts/04_descriptive_stats.py`
+   statistiques descriptives, quantiles et top relations a risque.
+5. `scripts/05_case_studies.py`
+   extraction des cas prioritaires (top20, acheteurs/fournisseurs a risque).
+6. `scripts/06_make_visuals.py`
+   generation des figures principales (steps 1 a 8).
+7. `scripts/07_community_modularity.py`
+   projection fournisseurs, Louvain multi-runs, modularite, analyse communautaire,
+   export de la figure `step9_community_modularity.png`.
+
+## Structure du depot
+- `configs/` : configurations de collecte API.
+- `scripts/` : pipeline complet de preparation, scoring et visualisation.
+- `reports/iclr_report/` : manuscript LaTeX final (template ICLR 2021).
+- `reports/figures/` : figures finales utilisees dans le rapport.
+- `data/processed/` : sorties compactes utiles a l'evaluation (CSV de resultats).
+- `requirements.txt` : dependances Python.
+
+## Execution
 Prerequis: Python 3.10+.
 
 ```bash
@@ -33,21 +59,31 @@ python scripts/06_make_visuals.py
 python scripts/07_community_modularity.py
 ```
 
-## Resultats principaux a consulter
-- Rapport: `reports/iclr_report/main.tex`
-- Figures:
-  - `reports/figures/step4_risk_score_dist.png`
-  - `reports/figures/step5_offers_low_vs_high.png`
-  - `reports/figures/step7_risk_vs_offers.png`
-  - `reports/figures/step8_pagerank_suppliers.png`
-  - `reports/figures/step9_community_modularity.png`
-- Tableaux CSV:
-  - `data/processed/top_risk_edges.csv`
-  - `data/processed/risk_score_quantiles.csv`
-  - `data/processed/community_modularity_metrics.csv`
-  - `data/processed/community_risk_top_large.csv`
+## Resultats a consulter en priorite
+Rapport:
+- `reports/iclr_report/main.tex`
 
-## Interpretation courte
-Le score de risque est un outil de priorisation, pas une preuve de fraude.
-L'analyse communautaire ajoute une lecture structurelle: le reseau est fortement
-structure en communautes, mais le risque reste surtout relationnel (niveau arete).
+Figures:
+- `reports/figures/step4_risk_score_dist.png`
+- `reports/figures/step5_offers_low_vs_high.png`
+- `reports/figures/step7_risk_vs_offers.png`
+- `reports/figures/step8_pagerank_suppliers.png`
+- `reports/figures/step9_community_modularity.png`
+
+Tableaux:
+- `data/processed/top_risk_edges.csv`
+- `data/processed/risk_score_quantiles.csv`
+- `data/processed/edges_features_summary.csv`
+- `data/processed/community_modularity_metrics.csv`
+- `data/processed/community_risk_top_large.csv`
+
+## Lecture rapide des contributions
+- score interpretable pour ranking des relations acheteur-fournisseur,
+- verification descriptive des signaux de risque (concentration, concurrence),
+- centralite structurelle (PageRank sur projection fournisseurs),
+- analyse communautaire avec modularite elevee et lecture de la concentration du risque.
+
+## Politique de versionnement
+Le depot versionne uniquement les elements necessaires a l'evaluation et a la
+reproduction. Les fichiers de cours, annexes PDF, donnees brutes et intermediaires
+ne sont pas inclus.
