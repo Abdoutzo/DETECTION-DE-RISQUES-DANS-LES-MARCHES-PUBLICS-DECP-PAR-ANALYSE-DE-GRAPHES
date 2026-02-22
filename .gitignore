@@ -25,20 +25,24 @@ scripts/update_iclr_figs.py
 scripts/update_iclr_figs_step1.py
 
 # Data policy
-# - exclude raw/interim
-# - include only processed outputs needed by reviewers
+# - include raw source + key interim/processed files used in the analysis pipeline
 data/raw/
 data/interim/
 data/processed/*
 !data/raw/
 !data/raw/decp_2024H2_travaux_cpv4521_filtered.csv
+!data/interim/
+!data/interim/markets_clean.csv
+!data/interim/edges_agg.csv
 !data/processed/buyers_high_risk.csv
 !data/processed/case_studies_top20.csv
 !data/processed/community_modularity_metrics.csv
 !data/processed/community_risk_summary.csv
 !data/processed/community_risk_top_large.csv
+!data/processed/edges_features.csv
 !data/processed/edges_features_summary.csv
 !data/processed/risk_score_quantiles.csv
 !data/processed/suppliers_high_risk.csv
 !data/processed/suppliers_pagerank_top10.csv
+!data/processed/supplier_communities.csv
 !data/processed/top_risk_edges.csv

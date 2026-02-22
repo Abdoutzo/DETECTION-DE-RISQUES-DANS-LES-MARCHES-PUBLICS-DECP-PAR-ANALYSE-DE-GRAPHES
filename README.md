@@ -42,7 +42,11 @@ Le pipeline est decoupe en scripts numerotes:
 - `configs/` : configurations de collecte API.
 - `scripts/` : pipeline complet de preparation, scoring et visualisation.
 - `reports/figures/` : figures finales generees par le pipeline.
-- `data/processed/` : sorties compactes utiles a l'evaluation (CSV de resultats).
+- `data/raw/` : donnee source extraite de l'API (fichier utilise dans le projet).
+- `data/interim/` : donnees intermediaires construites pendant le pipeline.
+  - `markets_clean.csv` : table nettoyee des marches (niveau marche).
+  - `edges_agg.csv` : aretes acheteur-fournisseur agregees.
+- `data/processed/` : sorties d'analyse et de scoring (features, classements, indicateurs).
 - `requirements.txt` : dependances Python.
 
 ## Execution
@@ -68,9 +72,13 @@ Figures:
 - `reports/figures/step9_community_modularity.png`
 
 Tableaux:
+- `data/interim/markets_clean.csv`
+- `data/interim/edges_agg.csv`
+- `data/processed/edges_features.csv`
 - `data/processed/top_risk_edges.csv`
 - `data/processed/risk_score_quantiles.csv`
 - `data/processed/edges_features_summary.csv`
+- `data/processed/supplier_communities.csv`
 - `data/processed/community_modularity_metrics.csv`
 - `data/processed/community_risk_top_large.csv`
 
